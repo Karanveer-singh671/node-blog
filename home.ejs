@@ -1,0 +1,49 @@
+<!-- views/home.ejs -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title>Node.js Blog</title>
+   <link rel"stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+   <style>
+      body {
+            padding-top: 20px;
+            padding-bottom: 20px;
+      }
+
+      .jumbotron {
+                  margin-top: 10 px;
+
+      }
+      </style>
+    </head>
+
+    <body>
+        <div class="container">
+             <%- include('partials/navbar') %>
+             <div class="jumbotron">
+                  <h1> All about Node </h1>
+                  <p class="lead"> Check out the articles below!</p>
+             </div>
+
+             <div class="row">
+                <div class="col-lg-12">
+                <div class="list-group">
+                  <!-- loop over blog posts and render them -->
+                  LIST_OF_POSTS
+                </div>
+            </div>
+        </div>
+        <%- include('partials/footer') %>
+    </div>
+</body>
+
+</html>
+
+
+// include a partial in EJS use <%- include(PARITAL_FILE) %>
+//<%- %> tags allow us to output the unescaped content onto the
+// page the (- ) important when using includes() statement since
+//don't want EJS to escape your HTML characters like "<",">"
